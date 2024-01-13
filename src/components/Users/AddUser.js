@@ -5,7 +5,7 @@ import Button from "../UI/Button"
 
 import classes from "./AddUser.module.css"
 
-const AddUser = () => {
+const AddUser = (props) => {
     const[enteredUserName, setEnteredUserName] = useState("")
     const[enteredAge, setEnteredAge] = useState("")
 
@@ -20,6 +20,7 @@ const AddUser = () => {
             return
         }
 
+        props.onAddUser(enteredUserName, enteredAge)
         setEnteredUserName("")
         setEnteredAge("")
     }
